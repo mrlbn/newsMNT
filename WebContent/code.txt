@@ -1,0 +1,110 @@
+	<a href="<%=basePath %>">首页</a> | 
+	<%
+	List menulist=cb.getCom("select * from fenlei order by id asc",2);
+		if(!menulist.isEmpty()){
+			for(int i=0;i<menulist.size();i++){
+			List listss=(List)menulist.get(i);
+	 %>
+	 <a href="<%=basePath %>news.jsp?id=<%=listss.get(0).toString()%>"><%=listss.get(1).toString()%></a> | 
+	 <%}} %> 
+	<a href="<%=basePath %>search.jsp">新闻搜索</a> | 
+	<a href="<%=basePath %>tj.jsp">个性推荐</a> |       
+	<a href="<%=basePath %>member/index.jsp">用户登录</a> |   
+	<a href="<%=basePath %>admin/login.jsp">管理登陆</a> 
+	
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td valign="middle" align="center"> 
+      <table width="360" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td align="center"> </td>
+        </tr>
+      </table>
+      <table width="280" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td height="30">&nbsp;</td>
+        </tr>
+        <tr>
+          <td bgcolor="#4047A4" height="1"></td>
+        </tr>
+      </table>
+      <table width="280" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td bgcolor="#4047A4" width="1"></td>
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="36">&nbsp;</td>
+              </tr>
+            </table><form action="<%=basePath %>AdminServlet" name=form1 method=post onSubmit="return checkform(form1)" autocomplete="off">
+            <table width="160" border="0" cellspacing="0" cellpadding="0" align="center">
+		      
+              <tr> 
+                <td colspan="3" class="news" height="5"><input type=hidden name=method value="one" /></td>
+              </tr>
+			 
+              <tr> 
+                <td width="5" class="nwes" height="36"></td>
+                <td width="56" class="font1" height="36"><font color="#ffffff">用户名</font></td>
+                <td> 
+		            <input type="text" name="username"  size="15" class=input  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" 
+                              onkeyup="value=value.replace(/[\W]/g,'')"/>
+                </td>
+              </tr>
+              <tr> 
+                <td class="nwes" height="36">&nbsp; </td>
+                <td class="font1" height="36"><font color="#ffffff">口　令</font></td>
+                <td> 
+		            <input type="password" name="password" value="" size="15" class=input onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" 
+                              onkeyup="value=value.replace(/[\W]/g,'')">
+                </td>
+              </tr>
+              
+              <tr> 
+                <td height="5" colspan="3"></td>
+              </tr>
+              <tr> 
+                <td>&nbsp; </td>
+                <td align="center">&nbsp; </td>
+                <td> 
+                  <input type="image" border="0" name="imageField" src="<%=basePath %><%=dir %>/images/bt_login.gif" width="70" height="16">
+                </td>
+              </tr>
+			  
+            </table></form>	
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="36">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+          <td bgcolor="#4047A4" width="1"></td>
+        </tr>
+      </table>
+      <table width="280" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td bgcolor="#4047A4" height="1"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<TABLE id=toplogin cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=left>
+      <DIV class=jstime style="FLOAT: left; WIDTH: 35%">
+      </DIV>
+      <DIV class=jstime style="FLOAT: right; WIDTH: 45%; TEXT-ALIGN: right">
+	  <!--****************时间日历开始****************-->
+      <SCRIPT>setInterval("clock.innerHTML=new Date().toLocaleString()+'&nbsp;&nbsp;星期'+'日一二三四五六'.charAt(new Date().getDay());",1000)</SCRIPT>
+      <SPAN id=clock></SPAN>
+	  <!--****************时间日历结束****************-->&nbsp;&nbsp; 
+	  </DIV>
+	</TD>
+   </TR>
+   </TBODY>
+</TABLE>
